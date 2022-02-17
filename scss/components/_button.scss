@@ -1,0 +1,14 @@
+@use 'sass:math';
+@use 'abstracts' as a;
+
+.btn {
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--clr-neutral-100);
+    font-size: var(--fs-400);
+    padding-block: math.div((a.$base-padding * 0.6), 0.75);
+    padding-inline: math.div((a.$base-padding * 0.8), 0.75);
+}

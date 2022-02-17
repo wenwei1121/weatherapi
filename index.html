@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/700b82712d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body class="dp-f">
+    <div class="card p-3 dp-b">
+        <!-- card navbar -->
+        <div class="card_navbar dp-f">
+            <!-- navbar nav_input -->
+            <div class="card_navbar_input">
+                <input type="checkbox" id="card_navbar-toggle" class="card_navbar-toggle">
+                <label for="card_navbar-toggle" class="card_navbar_label">
+                    <span class="line bg-neutral-100"></span>
+                 </label>
+                <div class="card_navbar_page p-3 bg-neutral-800">
+                    <div class="card_navbar_page_content">
+                        <div class="card_navbar_page_content_box dp-f p-2 bg-neutral-700">
+                            <div class="card_navbar_page_content_box_left dp-f g-1">
+                                <span>土城區</span>
+                                <span>下午10:35</span>
+                            </div>
+                            <div class="card_navbar_page_content_box_right">
+                                <span>28</span>
+                            </div>
+                        </div>
+                        <div class="card_navbar_page_content_box dp-f p-2 bg-neutral-700">
+                            <div class="card_navbar_page_content_box_left dp-f g-1">
+                                <span>土城區</span>
+                                <span>下午10:35</span>
+                            </div>
+                            <div class="card_navbar_page_content_box_right">
+                                <span>28</span>
+                            </div>
+                        </div>
+                        <div class="card_navbar_page_content_box dp-f p-2 bg-neutral-700">
+                            <div class="card_navbar_page_content_box_left dp-f g-1">
+                                <span>土城區</span>
+                                <span>下午10:35</span>
+                            </div>
+                            <div class="card_navbar_page_content_box_right">
+                                <span>28</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- navbar time -->
+            <div class="now_time dp-f g-2"></div>
+            <!-- navbar unit_select -->
+            <button class="btn unit_select">°C</button>
+        </div>
+        <!-- card content -->
+        <div class="card_content mbs-2">
+            <!-- now information -->
+            <div class="card_content_main">
+                <div class="mainbox dp-f pb-5">
+                    <div class="mainbox_info dp-f g-5"></div>
+                    <div class="mainbox_icon">
+                        <div class="mainbox_icon_wrap dp-b p-5"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- forecast information -->
+            <div class="card_content_info">
+                <!--  today information (from today nowtime)-->
+                <div class="daytimes pb-2">
+                    <div class="daytimes_top dp-f g-2"></div>
+                    <div class="daytimes_bottom dp-f mbs-1 g-2"></div> 
+                </div>
+                <!--  a week future information -->
+                <div class="week_info mbs-2">
+                    <div class="week">
+                        <div class="day_info dp-f">
+                            <div class="days dp-f g-1"></div>
+                            <div class="pops dp-f g-1">
+                                <div class="pops_icon dp-f g-1"></div>
+                                <div class="pops_value dp-f g-1"></div>
+                            </div>
+                            <div class="tems dp-f g-2">
+                                <div class="tems_high dp-f g-1"></div>
+                                <div class="tems_low dp-f g-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- today extra information -->
+                <div class="extra mbs-2">
+                    <div class="extra_info dp-f">
+                        <div class="extra_info_box">
+                            <div class="extra_info_box_content sunrise dp-f"></div>
+                        </div>
+                        <div class="extra_info_box">
+                            <div class="extra_info_box_content sunset dp-f"></div>
+                        </div>
+                        <div class="extra_info_box">
+                            <div class="extra_info_box_content pop dp-f"></div>
+                        </div>
+                        <div class="extra_info_box">
+                            <div class="extra_info_box_content humidity dp-f"></div>
+                        </div>
+                        <div class="extra_info_box">
+                            <div class="extra_info_box_content uv dp-f"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./js/main.js"></script>
+</body>
+</html>

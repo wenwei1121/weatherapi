@@ -1,0 +1,20 @@
+@use 'variables' as *;
+
+$type-scale:(
+    small:(
+        300: $base-font-size * 1.4,
+        400: $base-font-size * 1.75,
+        500: $base-font-size * 2.1,
+        600: $base-font-size * 2.45,
+        700: $base-font-size * 2.8,
+        800: $base-font-size * 3.15
+    ),
+    large:(
+        300: $base-font-size * 1.4,
+        400: $base-font-size * 2.1,
+        500: $base-font-size * 2.8,
+        600: $base-font-size * 3.5,
+        700: $base-font-size * 4.2,
+        800: $base-font-size * 4.9
+    )
+);

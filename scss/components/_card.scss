@@ -1,0 +1,198 @@
+@use 'sass:math';
+@use 'abstracts' as a;
+
+// card
+.card {
+    position: relative;
+    overflow: {
+        x: hidden;
+        y: auto;
+    }
+    background: linear-gradient(0deg, var(--clr-sunny-500), var(--clr-sunny-200));
+    inline-size: 375px;
+    min-inline-size: 330px;
+    max-block-size: 667px;
+    border-radius: math.div(a.$base-border-radius, 3);
+    box-shadow: a.$base-box-shadow;
+    color: var(--clr-neutral-100);
+}
+
+.card.sunny {
+    background: linear-gradient(0deg, var(--clr-sunny-500), var(--clr-sunny-200));
+}
+
+.card.cloudy {
+    background: linear-gradient(0deg, var(--clr-cloudy-500), var(--clr-cloudy-200));
+}
+
+.card.rainy {
+    background: linear-gradient(0deg, var(--clr-rainy-500), var(--clr-rainy-200));
+}
+
+.card_navbar {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 99;
+    background-color: rgba(#fff, .15);
+    backdrop-filter: blur(5px);
+    font: {
+        size: var(--fs-400);
+        weight: 400;
+    }
+
+    @include a.flex-attr;
+
+    & > *:nth-child(1),
+    & > *:nth-child(3) {
+        flex-basis: 10%;
+    }
+
+    & > *:nth-child(2) {
+        word-spacing: a.$base-padding * 2;
+    }
+}
+
+.card_content {
+    font-size: var(--fs-500);
+}
+
+.mainbox {
+
+    & > * {
+        flex-basis: 100%;
+    }
+
+    &_info {
+        @include a.flex-attr($direction: column, $alignItems: flex-start);
+
+        &_top {
+            font: {
+                size: var(--fs-600);
+                weight: 600;
+            }
+            @include a.flex-attr($direction: column, $alignItems: flex-start);
+        }
+
+        &_bottom {
+            @include a.flex-attr($direction: column);
+
+            .avg_tem {
+                font-size: calc(var(--fs-800) * 2.4);
+            }
+        }
+    }
+
+    &_icon {
+        position: relative;
+
+        &_wrap {
+            position: absolute;
+            inset: {
+                inline-start: 3%;
+                block-start: 50%;
+            } 
+            transform: translateY(-50%);
+            border-radius: a.$base-border-radius * 50;
+            background-color: rgba(#fff, .15);
+            backdrop-filter: blur(5px);
+
+            .weather_icon {
+                inline-size: 180px;
+                block-size: 180px;
+            }
+        }
+    }
+}
+
+.daytimes {
+    border-block: (a.$base-border-thickness) solid var(--clr-neutral-100);
+    overflow-x: auto;
+
+    &_top {  
+        @include a.flex-attr($direction: row);
+    
+        &_wrap { 
+            flex: 0 0 calc(calc(100% - 8rem) / 5);
+            @include a.flex-attr($direction: column);
+    
+            &_time {
+                font-size: var(--fs-300);
+                @include a.flex-attr($direction: column);
+            }
+    
+            &_tem {
+                font-size: var(--fs-600);
+            }
+        }
+    }
+
+    &_bottom {
+        @include a.flex-attr($direction: row);
+
+        & > * {
+            text-align: center;
+            // 8rem = gap(g-2) * 4 
+            flex: 0 0 calc(calc(100% - 8rem) / 5);
+        }
+    }
+}
+
+.day_info {
+    @include a.flex-attr($alignItems: flex-start);
+
+    .days {
+        @include a.flex-attr($direction: column, $alignItems: flex-start);
+    }
+
+    .pops {
+
+        &_icon {
+            @include a.flex-attr($direction: column);
+        }
+
+        &_value {
+            font-size: var(--fs-300);
+            padding-block: a.$base-padding * 0.5;
+            @include a.flex-attr($direction: column);
+        } 
+    }
+
+    .tems {
+
+        &_high {
+            @include a.flex-attr($direction: column);
+        }
+
+        &_low {
+            @include a.flex-attr($direction: column);
+        }
+    }
+}
+
+.extra {
+
+    &_info {
+        border-block-start: a.$base-border-thickness solid var(--clr-neutral-100);
+        gap: a.$base-gap * 0.5;
+        @include a.flex-attr($direction: column, $alignItems: flex-start);
+
+        &_box {
+            inline-size: 100%;
+            border-block-end: a.$base-border-thickness solid var(--clr-neutral-100);
+            padding-block: a.$base-padding;
+
+            &_content {
+
+                @include a.flex-attr($direction: column, $alignItems: flex-start);
+
+                & > span:nth-child(1) {
+                    font-size: var(--fs-300);
+                }
+
+                & > span:nth-child(2) {
+                    font-size: var(--fs-600);
+                }
+            }
+        }
+    }
+}

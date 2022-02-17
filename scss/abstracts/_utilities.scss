@@ -1,0 +1,202 @@
+@forward 'variables' show $base-margin, $base-padding;
+@use 'variables' as v;
+
+$utilities:(
+    margin:(
+        prefix: m,
+        values:(
+            a: auto,
+            0: 0,
+            1: v.$base-margin,
+            2: v.$base-margin * 2,
+            3: v.$base-margin * 3,
+            4: v.$base-margin * 4,
+            5: v.$base-margin * 5
+        )
+    ),
+    margin-inline:(
+        prefix: mi,
+        values:(
+            a: auto,
+            0: 0,
+            1: v.$base-margin,
+            2: v.$base-margin * 2,
+            3: v.$base-margin * 3,
+            4: v.$base-margin * 4,
+            5: v.$base-margin * 5
+        )
+    ),
+    margin-inline-start:(
+        prefix: mis,
+        values:(
+            0: 0,
+            1: v.$base-margin,
+            2: v.$base-margin * 2,
+            3: v.$base-margin * 3,
+            4: v.$base-margin * 4,
+            5: v.$base-margin * 5
+        )
+    ),
+    margin-inline-end:(
+        prefix: mie,
+        values:(
+            0: 0,
+            1: v.$base-margin,
+            2: v.$base-margin * 2,
+            3: v.$base-margin * 3,
+            4: v.$base-margin * 4,
+            5: v.$base-margin * 5
+        )
+    ),
+    margin-block:(
+        prefix: mb,
+        values:(
+            a: auto,
+            0: 0,
+            1: v.$base-margin,
+            2: v.$base-margin * 2,
+            3: v.$base-margin * 3,
+            4: v.$base-margin * 4,
+            5: v.$base-margin * 5
+        )
+    ),
+    margin-block-start:(
+        prefix: mbs,
+        values:(
+            0: 0,
+            1: v.$base-margin,
+            2: v.$base-margin * 2,
+            3: v.$base-margin * 3,
+            4: v.$base-margin * 4,
+            5: v.$base-margin * 5
+        )
+    ),
+    margin-block-end:(
+        prefix: mbe,
+        values:(
+            0: 0,
+            1: v.$base-margin,
+            2: v.$base-margin * 2,
+            3: v.$base-margin * 3,
+            4: v.$base-margin * 4,
+            5: v.$base-margin * 5
+        )
+    ),
+    padding:(
+        prefix: p,
+        values:(
+            a: auto,
+            0: 0,
+            1: v.$base-padding,
+            2: v.$base-padding * 2,
+            3: v.$base-padding * 3,
+            4: v.$base-padding * 4,
+            5: v.$base-padding * 5
+        )
+    ),
+    padding-inline:(
+        prefix: pi,
+        values:(
+            a: auto,
+            0: 0,
+            1: v.$base-padding,
+            2: v.$base-padding * 2,
+            3: v.$base-padding * 3,
+            4: v.$base-padding * 4,
+            5: v.$base-padding * 5
+        )
+    ),
+    padding-inline-start:(
+        prefix: pis,
+        values:(
+            0: 0,
+            1: v.$base-padding,
+            2: v.$base-padding * 2,
+            3: v.$base-padding * 3,
+            4: v.$base-padding * 4,
+            5: v.$base-padding * 5
+        )
+    ),
+    padding-inline-end:(
+        prefix: pie,
+        values:(
+            0: 0,
+            1: v.$base-padding,
+            2: v.$base-padding * 2,
+            3: v.$base-padding * 3,
+            4: v.$base-padding * 4,
+            5: v.$base-padding * 5
+        )
+    ),
+    padding-block:(
+        prefix: pb,
+        values:(
+            a: auto,
+            0: 0,
+            1: v.$base-padding,
+            2: v.$base-padding * 2,
+            3: v.$base-padding * 3,
+            4: v.$base-padding * 4,
+            5: v.$base-padding * 5
+        )
+    ),
+    padding-block-start:(
+        prefix: pbs,
+        values:(
+            0: 0,
+            1: v.$base-padding,
+            2: v.$base-padding * 2,
+            3: v.$base-padding * 3,
+            4: v.$base-padding * 4,
+            5: v.$base-padding * 5
+        )
+    ),
+    padding-block-end:(
+        prefix: pbe,
+        values:(
+            0: 0,
+            1: v.$base-padding,
+            2: v.$base-padding * 2,
+            3: v.$base-padding * 3,
+            4: v.$base-padding * 4,
+            5: v.$base-padding * 5
+        )
+    ),
+    gap:(
+        prefix: g,
+        values:(
+            0: 0,
+            1: v.$base-gap,
+            2: v.$base-gap * 2,
+            3: v.$base-gap * 3,
+            4: v.$base-gap * 4,
+            5: v.$base-gap * 5
+        )
+    ),
+    display:(
+        prefix: dp,
+        values:(
+            i: inline,
+            ib: inline-block,
+            b: block,
+            f: flex,
+            g: grid
+        )
+    )
+);
+
+// foreach utilities
+@each $attr, $map in $utilities {
+    $prefix: map-get($map, prefix);
+    $values: map-get($map, values);
+
+    @each $num, $val in $values {
+        @if($num == default) {
+            
+        } @else {
+            .#{$prefix}-#{$num} {
+                #{$attr}: #{$val};
+            }
+        }
+    }
+}

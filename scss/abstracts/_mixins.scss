@@ -1,0 +1,17 @@
+@use 'breakpoints' as *;
+
+// foreach breackpoints
+@mixin mq($key) {
+    $size: map-get($breakpoints, $key);
+
+    @media screen and (min-width: $size) {
+        @content;
+    }
+}
+
+// flex styles
+@mixin flex-attr($direction: row, $justifyContent: space-between, $alignItems: center) {
+    flex-direction: $direction;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}

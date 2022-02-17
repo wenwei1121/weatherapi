@@ -1,0 +1,49 @@
+@use 'sass:math';
+@use 'abstracts' as a;
+
+.card_navbar_input {
+    cursor: pointer;
+    padding-block: math.div((a.$base-padding * 0.6), 0.75);
+    padding-inline: math.div((a.$base-padding * 0.8), 0.75);
+
+    .card_navbar_label {
+        cursor: pointer;
+        
+        .line {
+            position: relative;
+            display: block;
+            inline-size: 16px;
+            block-size: 3px;
+            border-radius: a.$base-border-radius;
+            transform: rotate(-360deg);
+            transition: transform .5s ease-out;
+
+            &::before {
+                position: absolute;
+                content: '';
+                inset: 0;
+                background-color: var(--clr-neutral-100);
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    .card_navbar-toggle {
+        display: none;
+
+        &:checked + .card_navbar_label .line{
+            transform: rotate(405deg);
+        }
+
+        &:checked + .card_navbar_label + .card_navbar_page {
+            transform: translateY(0);
+        }
+
+        &:checked + .card_navbar_label + .card_navbar_page 
+        > .card_navbar_page_content 
+        > .card_navbar_page_content_box{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
