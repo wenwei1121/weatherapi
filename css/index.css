@@ -762,7 +762,7 @@ span {
   align-items: center;
 }
 .mainbox_info_bottom .avg_tem {
-  font-size: calc(var(--fs-800) * 2.2);
+  font-size: calc(var(--fs-600) * 2);
 }
 .mainbox_icon {
   position: relative;
@@ -803,7 +803,7 @@ span {
   align-items: center;
 }
 .daytimes_top_wrap_tem {
-  font-size: var(--fs-600);
+  font-size: calc(var(--fs-300) * 2);
 }
 .daytimes_bottom {
   flex-direction: row;
